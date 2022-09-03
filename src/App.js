@@ -1,5 +1,5 @@
 import Navbar from './Navbar';
-import List from './List'; 
+import List from './ListClass'; 
 import Counter from './CounterClass';
 // import Counter from './Counter';
 function App() {
@@ -15,8 +15,7 @@ function App() {
             <div className="container">
                 <List 
                     title="Guitars"
-                    items={guitars}
-                    background='primary'
+                    items={guitars} 
                 />
                 <Counter />
             </div>
