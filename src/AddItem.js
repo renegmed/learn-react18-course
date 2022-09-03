@@ -1,46 +1,56 @@
 
-import { Component } from 'react';
- 
+import React, { Component } from 'react';
 
 class AddItem extends Component {
     constructor(props) {
         super(props);
+        
+        this.guitarName = React.createRef(null);
+        this.guitarMaker = React.createRef(null);
 
-        this.state = {
-            newItem: ''           
-        }
         this.handleClick = this.handleClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        
     }
 
     handleClick(e) {
         e.preventDefault();
-        
-        this.props.onSubmit(this.state.newItem)
 
-        this.setState({ 
-            newItem: ''
-        }); 
+        let title = this.guitarName.current.value;
+        let text = this.guitarMaker.current.value;
+        this.props.onSubmit({
+            title,
+            text
+        });
+
+        this.guitarName.current.value = '';
+        this.guitarMaker.current.value = '';
+        this.guitarName.current.focus();
 
         // TODO: add text to the array
     }
 
     
-    handleChange(e) {
-        this.setState({newItem: e.target.value});
-        //console.log(this.state.newItem);
-    }
     render() {
    
         return (
             <>
                 <div className="pt-3 pb-2">
                     <form>
-                        <input type="text" 
-                            className="form-control-inline" 
-                            value={this.state.newItem}
-                            onChange={this.handleChange}
-                        />
+                        <div className="mb-3">                       
+                            <input 
+                                type="text" 
+                                className="form-control-inline"
+                                ref={this.guitarName}                            
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <select ref={this.guitarMaker}>
+                                <option value=''></option>
+                                <option value='PRS'>PRS</option>
+                                <option value='Fender'>Fender</option>
+                                <option value='Gibson'>Gibson</option>
+                            </select>
+                        </div>
                         <button 
                             className="btn btn-primary"
                             onClick={this.handleClick}

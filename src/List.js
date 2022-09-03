@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 function List(props) {
     // let tempItems = props.items || []; one way to provide default value
     
-    let items = props.items.map((item) => <ListItem key={item} text={item}/>);  //<li>{item}</li>); 
+    let items = props.items.map((item) => <ListItem key={item.title} item={item}/>);  //<li>{item}</li>); 
     let css = `bg-${props.background}`;
     return (
         <>
-            <h3 className={css}>{props.title}</h3>
+            <h3>{props.title}</h3>
             <ul>
                 {items}
             </ul>

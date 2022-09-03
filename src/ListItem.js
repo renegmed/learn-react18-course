@@ -1,6 +1,9 @@
 function ListItem(props) {
     return (
-        <li>{props.text}</li>
+        <li>
+            <h5>{props.item.title}</h5>
+            {props.item.text} 
+        </li>
     )
 }
 

@@ -5,7 +5,10 @@ import AddItem from './AddItem';
 //import Counter from './CounterClass';
 // import Counter from './Counter';
 function App() {
-    const [guitars, setGuitars] = useState(['Strat', 'Les Paul', 'Explorer']);
+    const [guitars, setGuitars] = useState([
+        {title: 'Strat'}, 
+        {title: 'Les Paul'},
+        {title: 'Explorer'}]);
     
     // sames as pass object as props (read only)
     // const stuff = List({title: 'Guitars', items: guitars});
@@ -18,7 +21,7 @@ function App() {
 
     return (
         <>
-            <Navbar title="Getting Started with State" />
+            <Navbar title="Uncontrolled Inputs" />
             <div className="container">
                 <AddItem buttonText="Add Guitar" onSubmit={updateGuitars}/>
                 <List 
