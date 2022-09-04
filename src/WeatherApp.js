@@ -1,8 +1,8 @@
 import { useState, useRef} from 'react';
-import WeatherWidget from './WeatherWidgetFunction'; // './WeatherWidgetClass';
+import WeatherWidget from './WeatherWidgetClass'; // './WeatherWidgetClass';
 
 function WeatherApp() {
-    const [location, setLocation] = useState('Houston');
+    const [location, setLocation] = useState('');
     const locationInput = useRef(null);
 
     function handleClick(e) {
