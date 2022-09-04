@@ -1,4 +1,4 @@
-
+import { makerStyles } from './guitarStyles';
 import React, { Component } from 'react';
 
 class AddItem extends Component {
@@ -44,11 +44,12 @@ class AddItem extends Component {
                             />
                         </div>
                         <div className="mb-3">
+                            {/* NOTE: style not working in Firefox */}
                             <select ref={this.guitarMaker}>
                                 <option value=''></option>
-                                <option value='PRS'>PRS</option>
-                                <option value='Fender'>Fender</option>
-                                <option value='Gibson'>Gibson</option>
+                                <option style={makerStyles.prs} value='PRS'>PRS</option>
+                                <option style={makerStyles.fender} value='Fender'>Fender</option>
+                                <option style={makerStyles.gibson} value='Gibson'>Gibson</option>
                             </select>
                         </div>
                         <button 

@@ -1,10 +1,7 @@
-function ListItem(props) {
-    const makerStyles = {
-        prs: {color: 'gray', backgroundColor: 'yellow'},
-        fender: {color: 'red', backgroundColor: 'black'},
-        gibson: {color: 'white', backgroundColor: 'navy'}
-    };
+import {makerStyles} from './guitarStyles';
 
+function ListItem(props) {
+ 
     let maker = props.item.text && props.item.text.toLowerCase();
 
     return (
