@@ -5,8 +5,8 @@ class AddItem extends Component {
     constructor(props) {
         super(props);
         
-        this.guitarName = React.createRef(null);
-        this.guitarMaker = React.createRef(null);
+        this.guitarName = React.createRef(null);  // for text input field
+        this.guitarMaker = React.createRef(null); // for select input field
 
         this.handleClick = this.handleClick.bind(this);
         
