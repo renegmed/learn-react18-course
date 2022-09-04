@@ -21,7 +21,7 @@ function App() {
 
     return (
         <>
-            <Navbar title="Uncontrolled Inputs" />
+            <Navbar title="Styling" />
             <div className="container">
                 <AddItem buttonText="Add Guitar" onSubmit={updateGuitars}/>
                 <List 

@@ -53,7 +53,7 @@ class AddItem extends Component {
                             </select>
                         </div>
                         <button 
-                            className="btn btn-primary"
+                            className="btn btn-primary boldYellowText"
                             onClick={this.handleClick}
                             
                         >
